@@ -60,16 +60,12 @@ struct triangle {
 };
 
 struct object {
-    vertex vertices[];
-    triangle triangles[];
-    object(vertex _vertices[], triangle _triangles[]) {
-        for (int i = 0; i < sizeof(_vertices); i++) {
-            vertices[i] = _vertices[i];
-        }
-        for (int i = 0; i < sizeof(_triangles); i++) {
-            triangles[i] = _triangles[i];
-        }
-    }
+    vector<vertex> vertices = {}; //лови епта!11
+    vector<triangle> triangles = {};
+    object(vector<vertex> _vertices, vector<triangle> _triangles):
+        vertices (_vertices);
+        triangles (_triangles);
+    {}
     void draw () {
         glPushMatrix();
             glBegin(GL_TRIANGLES);
