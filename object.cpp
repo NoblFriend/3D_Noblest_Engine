@@ -69,7 +69,7 @@ struct object {
     void draw () {
         glPushMatrix();
             glBegin(GL_TRIANGLES);
-                for (int i = 0; i < sizeof(triangles); i++) {
+                for (int i = 0; i < triangles.size(); i++) {
                     for (int v = 0; v < 3; v++)
                         glVertex3d(vertices[triangles[i].vertices[v]].x,vertices[triangles[i].vertices[v]].y,vertices[triangles[i].vertices[v]].z);
                 }
